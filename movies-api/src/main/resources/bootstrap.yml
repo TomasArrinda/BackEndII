@@ -1,3 +1,5 @@
+# server:
+#   port: 8085
 # spring:
 #   application:
 #     name: api-movies
@@ -10,11 +12,9 @@
 #       host: localhost
 #   main:
 #     allow-circular-references: true
-
 # app:
 #   cors:
 #     allowed-origins: http://localhost:3000
-
 # management:
 #   endpoints:
 #     web:
@@ -22,15 +22,11 @@
 #   endpoint:
 #     health:
 #       show-details: always
-
 # springdoc:
 #   show-actuator: true
 #   swagger-ui:
 #     groups-order: DESC
 #     disable-swagger-default-url: true
-# server:
-#   port: 8085
-
 # eureka:
 #   client:
 #     enabled: false

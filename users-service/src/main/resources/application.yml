@@ -1,3 +1,5 @@
+server:
+  port: 8086
 spring:
   security:
     oauth2:
@@ -15,18 +17,12 @@ spring:
       host: localhost
   main:
     allow-circular-references: true
-
 app:
   cors:
     allowed-origins: http://localhost:3000
-#
 #eureka:
 #  client:
 #    enabled: false
-
-server:
-  port: 8086
-
 #springdoc:
 #  show-actuator: true
 #  swagger-ui:

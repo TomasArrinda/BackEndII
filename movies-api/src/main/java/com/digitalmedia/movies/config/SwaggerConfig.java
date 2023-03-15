@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SwaggerConfig {
-
     @Value("${spring.application.name}")
     private String applicationName;
 
@@ -23,16 +22,13 @@ public class SwaggerConfig {
                                 new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("bearer").bearerFormat("JWT")))
                 .info(new Info().title(applicationName));
     }
-
     @Bean
     public GroupedOpenApi customApi() {
         return GroupedOpenApi.builder().group("api").pathsToMatch("/api/**").build();
     }
-
     @Bean
     public GroupedOpenApi actuatorApi() {
         return GroupedOpenApi.builder().group("actuator").pathsToMatch("/actuator/**").build();
     }
-
     public static final String BEARER_KEY_SECURITY_SCHEME = "bearer-key";
 }

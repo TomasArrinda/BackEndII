@@ -1,3 +1,5 @@
+server:
+  port: 9090
 spring:
   security:
     oauth2:
@@ -5,6 +7,10 @@ spring:
         provider:
           keycloak-provider:
             issuer-uri: http://localhost:8082/realms/digitalmedia
+            jwk-set-uri: http://localhost:8082/realms/digitalmedia/protocol/openid-connect/certs
+            token-uri: http://localhost:8082/realms/digitalmedia/protocol/openid-connect/token
+            authorization-uri: http://localhost:8082/realms/digitalmedia/protocol/openid-connect/auth
+            user-info-uri: http://localhost:8082/realms/digitalmedia/protocol/openid-connect/userinfos
         registration:
           api-gateway-service:
             provider: keycloak-provider
@@ -12,24 +18,25 @@ spring:
             client-secret: UW5WIVaBtuRw0z9KaiS3cgCWDippzdqX
             authorization-grant-type: authorization_code
             redirect-uri: 'http://localhost:9090/login/oauth2/code/keycloak'
-
   cloud:
     gateway:
       default-filters:
         - TokenRelay
       routes:
         - id: api-movies
-          uri: "http://localhost:8085/movies"
+          uri: "http://localhost:8085"
           predicates:
             - Path= /movies
         - id: users-service
-          uri: "http://localhost:8086/"
+          uri: "http://localhost:8086"
           predicates:
             - Path= /user
-#        - id: api-facturacion
-#          uri: # http://localhost: puerto del proyecto
-#          predicates:
-#            - Path= / #endpoint api-facturación (?)
-
-server:
-  port: 9090
+        - id: billing-route
+          uri: "http://localhost:8087"
+          predicates:
+            - Path= /bills
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    enabled: true

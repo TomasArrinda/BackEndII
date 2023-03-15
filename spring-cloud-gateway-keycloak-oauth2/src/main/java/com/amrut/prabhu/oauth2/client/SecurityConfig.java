@@ -10,7 +10,6 @@ import org.springframework.security.web.server.authentication.logout.ServerLogou
 
 @Configuration
 public class SecurityConfig {
-
 	@Bean
 	public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http, ServerLogoutSuccessHandler handler) {
 		http
@@ -27,19 +26,13 @@ public class SecurityConfig {
 				.logout()
 				.logoutSuccessHandler(handler)
 		;
-
 		return http.build();
 	}
-
 	@Bean
 	public ServerLogoutSuccessHandler keycloakLogoutSuccessHandler(ReactiveClientRegistrationRepository repository) {
-
         OidcClientInitiatedServerLogoutSuccessHandler oidcLogoutSuccessHandler =
                 new OidcClientInitiatedServerLogoutSuccessHandler(repository);
-
         oidcLogoutSuccessHandler.setPostLogoutRedirectUri("{baseUrl}/logout.html");
-
         return oidcLogoutSuccessHandler;
     }
-    
 }

@@ -24,14 +24,11 @@ public class UserController {
   public String siEsAdmin(){
     return "Funciona!";
   }
-
-
   @GetMapping("/me")
   @PreAuthorize("hasRole('ROLE_admin') AND hasAutority('GROUP_admin')")
   public User getUserExtra(@RequestParam String principal) {
     return userService.validateAndGetUserExtra(principal);
   }
-
   @PostMapping("/me")
   public User saveUserExtra(@Valid @RequestBody UserRequest updateUserRequest, @RequestParam(value = "principal") String principal) {
     Optional<User> userOptional = userService.getUserExtra(principal);
@@ -39,5 +36,4 @@ public class UserController {
     userExtra.setAvatar(updateUserRequest.getAvatar());
     return userService.saveUserExtra(userExtra);
   }
-
 }

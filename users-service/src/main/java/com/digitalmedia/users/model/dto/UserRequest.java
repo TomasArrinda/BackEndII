@@ -5,7 +5,6 @@ import lombok.Data;
 
 @Data
 public class UserRequest {
-
     @Schema(example = "avatar")
     private String avatar;
 }

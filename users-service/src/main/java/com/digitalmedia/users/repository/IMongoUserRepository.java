@@ -7,5 +7,3 @@ import java.util.Optional;
 
 public interface IMongoUserRepository extends MongoRepository<User,String> {
 }
-
-

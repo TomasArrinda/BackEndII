@@ -11,7 +11,6 @@ import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class OAuth2ResourceServerSecurityConfiguration extends WebSecurityConfigurerAdapter {
-
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.oauth2ResourceServer().jwt().jwtAuthenticationConverter(new KeyCloakJwtAuthenticationConverter());

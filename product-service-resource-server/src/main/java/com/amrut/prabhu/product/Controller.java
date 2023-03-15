@@ -8,7 +8,6 @@ import java.security.Principal;
 
 @RestController
 public class Controller {
-
     @GetMapping("/product")
     @RolesAllowed({"product_read"})
     public String getProduct(Principal principal) {

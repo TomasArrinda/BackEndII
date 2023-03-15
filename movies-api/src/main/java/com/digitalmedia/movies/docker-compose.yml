@@ -80,6 +80,5 @@ services:
 
 networks:
   local-keycloak:
-
 volumes:
   db:

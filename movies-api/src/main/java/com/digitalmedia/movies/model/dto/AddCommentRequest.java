@@ -7,7 +7,6 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 public class AddCommentRequest {
-
     @Schema(example = "Very good!")
     @NotBlank
     private String text;

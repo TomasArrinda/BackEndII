@@ -13,7 +13,6 @@ import java.util.Collections;
 import static java.util.Objects.isNull;
 
 public class OAuthClientCredentialsFeignManager {
-
     private final OAuth2AuthorizedClientManager manager;
     private final Authentication principal;
     private final ClientRegistration clientRegistration;
@@ -23,45 +22,37 @@ public class OAuthClientCredentialsFeignManager {
         this.clientRegistration = clientRegistration;
         this.principal = createPrincipal();
     }
-
     private Authentication createPrincipal() {
         return new Authentication() {
             @Override
             public Collection<? extends GrantedAuthority> getAuthorities() {
                 return Collections.emptySet();
             }
-
             @Override
             public Object getCredentials() {
                 return null;
             }
-
             @Override
             public Object getDetails() {
                 return null;
             }
-
             @Override
             public Object getPrincipal() {
                 return this;
             }
-
             @Override
             public boolean isAuthenticated() {
                 return false;
             }
-
             @Override
             public void setAuthenticated(boolean isAuthenticated) throws IllegalArgumentException {
             }
-
             @Override
             public String getName() {
                 return clientRegistration.getClientId();
             }
         };
     }
-
     public String getAccessToken() {
         try {
             OAuth2AuthorizeRequest oAuth2AuthorizeRequest = OAuth2AuthorizeRequest
@@ -78,5 +69,4 @@ public class OAuthClientCredentialsFeignManager {
         }
         return null;
     }
-
 }

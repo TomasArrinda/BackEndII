@@ -9,7 +9,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Document(collection = "users")
 public class User {
-
   @Id
   private String username;
   private String avatar;

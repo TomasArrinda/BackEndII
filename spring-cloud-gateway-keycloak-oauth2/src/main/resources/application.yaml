@@ -1,3 +1,5 @@
+server:
+  port: 9090
 spring:
   cloud:
     gateway:
@@ -35,7 +37,6 @@ spring:
             client-secret: 3RhEF8pqKTANrQ6BhfxaYVmcjTXsDK0u
             authorization-grant-type: authorization_code
             redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
-
 # Enable these to debug the Authorization flow
 logging:
     level:
@@ -43,9 +44,6 @@ logging:
         springframework:
           security:
             web: DEBUG
-server:
-  port: 9090
-
 management:
   endpoints:
     web:

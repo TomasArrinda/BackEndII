@@ -9,16 +9,9 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 public class Bill {
-
-        private String idBill;
-
-        private Date billingDate;
-
-        private String customerBill;
-
-        private String productBill;
-
-        private Double totalPrice;
-
-
+    private String idBill;
+    private Date billingDate;
+    private String customerBill;
+    private String productBill;
+    private Double totalPrice;
 }

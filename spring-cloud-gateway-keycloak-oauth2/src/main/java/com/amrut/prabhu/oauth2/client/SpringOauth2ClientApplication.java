@@ -6,9 +6,7 @@ import org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDeta
 
 @SpringBootApplication(exclude = ReactiveUserDetailsServiceAutoConfiguration.class)
 public class SpringOauth2ClientApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(SpringOauth2ClientApplication.class, args);
     }
-
 }

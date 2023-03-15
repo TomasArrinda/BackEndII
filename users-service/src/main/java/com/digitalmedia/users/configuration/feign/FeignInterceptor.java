@@ -9,8 +9,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class FeignInterceptor implements RequestInterceptor {
-
-
     @Override
     public void apply(RequestTemplate requestTemplate) {
         String token = getAccessToken();
@@ -18,17 +16,15 @@ public class FeignInterceptor implements RequestInterceptor {
             requestTemplate.header("Authorization", "Bearer " + token);
         }
     }
-
     private String getAccessToken() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String token = null;
         if (authentication != null) {
             try {
                 token = ((JwtAuthenticationToken) authentication).getToken().getTokenValue();
-            } catch (Exception ignored) {
-
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-
         }
         return token;
     }

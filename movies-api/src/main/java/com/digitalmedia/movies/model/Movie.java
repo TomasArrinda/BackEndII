@@ -12,7 +12,6 @@ import java.util.List;
 @Data
 @Document(collection = "movies")
 public class Movie {
-
     @Id
     private String imdbId;
     private String title;
