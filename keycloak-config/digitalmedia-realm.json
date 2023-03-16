@@ -1,6 +1,6 @@
 {
-  "id" : "My-Realm",
-  "realm" : "My-Realm",
+  "id" : "digitalmedia",
+  "realm" : "digitalmedia",
   "notBefore" : 0,
   "defaultSignatureAlgorithm" : "RS256",
   "revokeRefreshToken" : false,
@@ -69,7 +69,7 @@
       "attributes" : { }
     }, {
       "id" : "8c844e49-19db-49d1-b7c5-0aa1fb96acb2",
-      "name" : "default-roles-my-realm",
+      "name" : "default-roles-digitalmedia",
       "description" : "${role_default-roles}",
       "composite" : true,
       "composites" : {
@@ -337,7 +337,7 @@
   "groups" : [ ],
   "defaultRole" : {
     "id" : "8c844e49-19db-49d1-b7c5-0aa1fb96acb2",
-    "name" : "default-roles-my-realm",
+    "name" : "default-roles-digitalmedia",
     "description" : "${role_default-roles}",
     "composite" : true,
     "clientRole" : false,
@@ -389,7 +389,7 @@
     } ],
     "disableableCredentialTypes" : [ ],
     "requiredActions" : [ ],
-    "realmRoles" : [ "product_read", "default-roles-my-realm" ],
+    "realmRoles" : [ "product_read", "default-roles-digitalmedia" ],
     "notBefore" : 0,
     "groups" : [ ]
   } ],
